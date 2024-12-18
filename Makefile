@@ -5,14 +5,17 @@ createdb :
 	docker exec -it bank-postgres createdb --username=root --owner=root simplebank
 
 dropdb :
-	docker exec -it bank-postgres dropdb  simplebank
+	docker exec -it bank-postgres dropdb simplebank
+
 migrateup :
 	migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simplebank?sslmode=disable" --verbose up
 
 migratedown :
 	migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simplebank?sslmode=disable" --verbose down
+
 sqlc :
-	slqc generate
+	sqlc generate
+
 test :
 	go test -v -cover ./...
 
