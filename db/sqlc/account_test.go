@@ -80,12 +80,14 @@ func TestDeleteAccount(t *testing.T) {
 }
 
 func TestListAccounts(t *testing.T) {
-	// var lastAccount Account
+
+	var lstAcc Account
 	for i := 0; i < 10; i++ {
-		createRandomAccount(t)
+		lstAcc = createRandomAccount(t)
 	}
 
 	arg := ListAccountsParams{
+		Owner:  lstAcc.Owner,
 		Limit:  5,
 		Offset: 0,
 	}
@@ -96,6 +98,6 @@ func TestListAccounts(t *testing.T) {
 
 	for _, account := range accounts {
 		require.NotEmpty(t, account)
-		// require.Equal(t, lastAccount.Owner, account.Owner)
+		require.Equal(t, lstAcc.Owner, account.Owner)
 	}
 }
