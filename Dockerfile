@@ -21,6 +21,6 @@ COPY start.sh .
 COPY wait-for.sh .
 
 
-EXPOSE 8080 9090
+EXPOSE 8000 9090
 CMD [ "/app/main" ]
 ENTRYPOINT [ "/app/start.sh" ]
