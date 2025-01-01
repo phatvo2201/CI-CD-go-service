@@ -1,4 +1,4 @@
-name: ci-test-before
+name: ci-test-before-merge
 
 on:
   push:
