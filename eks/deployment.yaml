@@ -17,10 +17,11 @@ spec:
     spec:
       containers:
       - name: simple-bank-api
-        image: 760486049168.dkr.ecr.eu-west-1.amazonaws.com/simplebank:latest
+        # image: 760486049168.dkr.ecr.eu-west-1.amazonaws.com/simplebank:latest
+        image: DOCKER_IMAGE
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 8000
           name: http-server
         - containerPort: 9090
           name: grpc-server
